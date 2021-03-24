@@ -1,16 +1,14 @@
 import UIKit
 
-struct Country: Decodable
-{
-    var Id: String
-    var Time: String
-    var Name: String
-    var Image: String?
-}
-
 class ViewController: UIViewController
 {
-    let urlString = "https://raw.githubusercontent.com/softex-group/task-mobile/master/test.json"
+    let urlTestJson = "https://raw.githubusercontent.com/softex-group/task-mobile/master/test.json"
+    let urlFreeGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/games/10/explicit.json"
+    let urlNewGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/10/explicit.json"
+    
+//    var networkServise = NetworkService()
+    var networkDataFetcher = NetworkDataFetcher()
+    let dataStore = DataStore()
     
     //Элементы пользовательского элемента
     @IBOutlet weak var enterYourNameLabel: UILabel!
@@ -23,7 +21,18 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        dataFetcher()
+        networkDataFetcher.fetchFreeGames(urlString: urlFreeGames) { (freeGames) in
+            print(freeGames?.feed.results.first?.name)
+        }
+        
+        networkDataFetcher.fetchNewGames(urlString: urlNewGames) { (newGames) in
+            print(newGames?.feed.results.first?.name)
+            print(newGames?.feed.results[9].name)
+        }
+        
+        networkDataFetcher.fetchCountry(urlString: urlTestJson) { (countries) in
+            print(countries?.first?.Name)
+        }
         designButton()
     }
     
@@ -34,42 +43,7 @@ class ViewController: UIViewController
             showAlert()
             return
         }
-        fakeSaveNameInCache(name: textName)
-    }
-    
-    //MARK: - Data Storage
-    
-    func fakeSaveNameInCache(name: String)
-    {
-        print("Ваше имя \(name) - сохраненно")
-    }
-    
-    func fakeGetNameInCache() -> String
-    {
-        return "Valery"
-    }
-    
-    //MARK: - Networking
-    
-    func dataFetcher()
-    {
-        request { (data, error) in
-            let decoder = JSONDecoder()
-            guard let data = data else { return }
-            let response = try? decoder.decode([Country].self, from: data)
-            print(response)
-        }
-    }
-    
-    func request(completion: @escaping (Data?, Error?) -> Void)
-    {
-        guard let url = URL(string: urlString) else { return }
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                completion(data, error)
-            }
-        }.resume()
+        dataStore.fakeSaveNameInCache(name: textName)
     }
     
     //MARK: - User interface
