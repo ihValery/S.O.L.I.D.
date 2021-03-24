@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7GH-aj-s3Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mTX-Oi-EXQ">
+            <objects>
+                <viewController id="7GH-aj-s3Y" customClass="ViewController" customModule="SOLID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UFu-Oz-pcX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGroundSolidClear" translatesAutoresizingMaskIntoConstraints="NO" id="peV-vl-bJo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-6v-oc7">
+                                <rect key="frame" x="25" y="792" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="JQc-kV-Z7g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Сохранить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fakeSaveAction:" destination="7GH-aj-s3Y" eventType="touchDown" id="cTf-Tz-Oqz"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-H2-SzW">
+                                <rect key="frame" x="25" y="244" width="364" height="136"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите ваше имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4k7-GW-13y">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="qxh-Wh-Z8S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="7GH-aj-s3Y" eventType="editingChanged" id="92D-9d-Zas"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-vC-DQX">
+                                        <rect key="frame" x="157" y="86" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4k7-GW-13y" firstAttribute="leading" secondItem="NSs-H2-SzW" secondAttribute="leading" id="NGE-jJ-Vfh"/>
+                                    <constraint firstAttribute="trailing" secondItem="4k7-GW-13y" secondAttribute="trailing" id="hDe-OS-g3n"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td2-f5-mXa">
+                                <rect key="frame" x="25" y="792" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="awD-RX-qSS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SDt-Er-efx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="Td2-f5-mXa" secondAttribute="bottom" constant="25" id="5v9-3c-kzf"/>
+                            <constraint firstAttribute="bottom" secondItem="peV-vl-bJo" secondAttribute="bottom" id="6Dc-jf-XGV"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="ffE-6v-oc7" secondAttribute="trailing" constant="25" id="MGC-7u-CVh"/>
+                            <constraint firstItem="Td2-f5-mXa" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="Qxt-hm-baq"/>
+                            <constraint firstItem="NSs-H2-SzW" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="VkE-Jh-keG"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="ffE-6v-oc7" secondAttribute="bottom" constant="25" id="eCO-WQ-tWl"/>
+                            <constraint firstItem="ffE-6v-oc7" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="fa0-a6-kZS"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="NSs-H2-SzW" secondAttribute="trailing" constant="25" id="hON-Bf-5h9"/>
+                            <constraint firstItem="peV-vl-bJo" firstAttribute="top" secondItem="UFu-Oz-pcX" secondAttribute="top" id="otI-eD-rsZ"/>
+                            <constraint firstItem="peV-vl-bJo" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" id="ouN-ag-oeN"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="peV-vl-bJo" secondAttribute="trailing" id="sVW-KM-1RK"/>
+                            <constraint firstItem="NSs-H2-SzW" firstAttribute="top" secondItem="SDt-Er-efx" secondAttribute="top" constant="200" id="z8j-ZA-x3J"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="Td2-f5-mXa" secondAttribute="trailing" constant="25" id="zBK-62-jpb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="Lba-vC-DQX" id="uC1-go-jiH"/>
+                        <outlet property="saveButton" destination="ffE-6v-oc7" id="6hD-NO-cq4"/>
+                        <outlet property="textFieldToEnterName" destination="4k7-GW-13y" id="bBY-hd-KVU"/>
+                        <outlet property="viewForDesign" destination="Td2-f5-mXa" id="bq6-U6-BTU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALD-Q6-A3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backGroundSolidClear" width="1170" height="2532"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
