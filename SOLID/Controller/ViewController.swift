@@ -18,16 +18,20 @@ class ViewController: UIViewController
         displayingButton(bool: false)
         designButton()
         
-        dataFetcherService.fetchCountry { (countries) in
-            print(countries?.first?.Name)
-        }
-        
         dataFetcherService.fetchFreeGames { (freGames) in
             print(freGames?.feed.results.first?.name)
         }
         
+        dataFetcherService.fetchCountry { (countries) in
+            print(countries?.first?.Name)
+        }
+
         dataFetcherService.fetchNewGames { (newGames) in
             print(newGames?.feed.results.first?.name)
+        }
+        
+        dataFetcherService.fetchLocalCountry { (localCountry) in
+            print(localCountry?.first?.Name)
         }
     }
     
@@ -110,5 +114,3 @@ class ViewController: UIViewController
         saveButton.layer.borderWidth = 2.0
     }
 }
-
-

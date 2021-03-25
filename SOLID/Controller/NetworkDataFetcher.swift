@@ -26,7 +26,7 @@ class NetworkDataFetcher: DataFetcher
         }
     }
     
-    private func decodeJSON<T: Decodable>(type: T.Type, data: Data?) -> T?
+    func decodeJSON<T: Decodable>(type: T.Type, data: Data?) -> T?
     {
         let decoder = JSONDecoder()
         guard let data = data else { return nil }
