@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8043AA12260CBBC200BE94EE /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8043AA11260CBBC200BE94EE /* DataFetcherService.swift */; };
 		8067279C260B4F78009DA897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067279B260B4F78009DA897 /* ViewController.swift */; };
 		806727A0260B4FE3009DA897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8067279F260B4FE3009DA897 /* Main.storyboard */; };
 		806727A5260B5677009DA897 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806727A4260B5677009DA897 /* NetworkService.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8043AA11260CBBC200BE94EE /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		8067279B260B4F78009DA897 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8067279F260B4FE3009DA897 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		806727A4260B5677009DA897 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				806727A7260B5801009DA897 /* DataStore.swift */,
 				806727A4260B5677009DA897 /* NetworkService.swift */,
 				806727B0260B6E01009DA897 /* NetworkDataFetcher.swift */,
+				8043AA11260CBBC200BE94EE /* DataFetcherService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				806977BD260B1DD400BE190C /* AppDelegate.swift in Sources */,
 				806727AB260B6C88009DA897 /* CountryModel.swift in Sources */,
 				806727A5260B5677009DA897 /* NetworkService.swift in Sources */,
+				8043AA12260CBBC200BE94EE /* DataFetcherService.swift in Sources */,
 				806727A8260B5801009DA897 /* DataStore.swift in Sources */,
 				806977BF260B1DD400BE190C /* SceneDelegate.swift in Sources */,
 				806727B4260B762C009DA897 /* AppGroup.swift in Sources */,

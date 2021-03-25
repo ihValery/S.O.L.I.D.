@@ -2,9 +2,9 @@ import Foundation
 
 class DataStore
 {    
-    func fakeSaveNameInCache(name: String)
+    func fakeSaveNameInCache(email: String)
     {
-        print("Ваше имя \(name) - сохраненно")
+        print("Вы якобы вошли в \(email)")
     }
     
     func fakeGetNameInCache() -> String
