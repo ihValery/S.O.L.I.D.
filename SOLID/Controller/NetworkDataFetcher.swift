@@ -1,17 +1,22 @@
 import Foundation
 
-class NetworkDataFetcher
+protocol DataFetcher
 {
-    //Устанавливаем зависимость
-    var networkService: NetworkService!
+    func fetchGenericJSONData<T: Decodable>(urlString: String, complitionResponse: @escaping (T?) -> Void)
+}
+
+class NetworkDataFetcher: DataFetcher
+{
+
+    var networking: Networking
     
-    init(networkService: NetworkService = NetworkService()) {
-        self.networkService = networkService
+    init(networking: Networking = NetworkService()) {
+        self.networking = networking
     }
     
     func fetchGenericJSONData<T: Decodable>(urlString: String, complitionResponse: @escaping (T?) -> Void)
     {
-        networkService.request(urlString: urlString) { (data, error) in
+        networking.request(urlString: urlString) { (data, error) in
             if let error = error {
                 print("Ошибка при запросе \(error.localizedDescription)")
                 complitionResponse(nil)
