@@ -2,11 +2,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    let urlTestJson = "https://raw.githubusercontent.com/softex-group/task-mobile/master/test.json"
-    let urlFreeGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/games/10/explicit.json"
-    let urlNewGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/10/explicit.json"
-    
-    var networkDataFetcher = NetworkDataFetcher()
+    var dataFetcherService = DataFetcherService()
     let dataStore = DataStore()
     
     @IBOutlet weak var textFieldToEnterName: UITextField!
@@ -20,20 +16,19 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         displayingButton(bool: false)
+        designButton()
         
-        networkDataFetcher.fetchFreeGames(urlString: urlFreeGames) { (freeGames) in
-            print(freeGames?.feed.results.first?.name)
-        }
-        
-        networkDataFetcher.fetchNewGames(urlString: urlNewGames) { (newGames) in
-            print(newGames?.feed.results.first?.name)
-            print(newGames?.feed.results[9].name)
-        }
-        
-        networkDataFetcher.fetchCountry(urlString: urlTestJson) { (countries) in
+        dataFetcherService.fetchCountry { (countries) in
             print(countries?.first?.Name)
         }
-        designButton()
+        
+        dataFetcherService.fetchFreeGames { (freGames) in
+            print(freGames?.feed.results.first?.name)
+        }
+        
+        dataFetcherService.fetchNewGames { (newGames) in
+            print(newGames?.feed.results.first?.name)
+        }
     }
     
     //MARK: - Business Logic
@@ -55,7 +50,7 @@ class ViewController: UIViewController
     
     @IBAction func fakeSaveAction(_ sender: Any)
     {
-        //Мы сюда не попадем при пустом textFieldToEnterName.text
+        //Мы сюда не попадем при пустом textFieldToEnterName
         dataStore.fakeSaveNameInCache(email: textFieldToEnterName.text!)
         showAlert()
         textFieldToEnterName.text = ""
