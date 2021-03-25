@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-6v-oc7">
-                                <rect key="frame" x="25" y="792" width="364" height="45"/>
+                                <rect key="frame" x="25" y="767" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="JQc-kV-Z7g"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-H2-SzW">
-                                <rect key="frame" x="25" y="244" width="364" height="136"/>
+                                <rect key="frame" x="25" y="244" width="364" height="86"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите ваше имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4k7-GW-13y">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -46,8 +46,8 @@
                                             <action selector="textFieldEditingChanged:" destination="7GH-aj-s3Y" eventType="editingChanged" id="92D-9d-Zas"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-vC-DQX">
-                                        <rect key="frame" x="157" y="86" width="50" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-vC-DQX">
+                                        <rect key="frame" x="182" y="86" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td2-f5-mXa">
-                                <rect key="frame" x="25" y="792" width="364" height="45"/>
+                                <rect key="frame" x="25" y="767" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="awD-RX-qSS"/>
                                 </constraints>
@@ -68,12 +68,12 @@
                         <viewLayoutGuide key="safeArea" id="SDt-Er-efx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="Td2-f5-mXa" secondAttribute="bottom" constant="25" id="5v9-3c-kzf"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="Td2-f5-mXa" secondAttribute="bottom" constant="50" id="5v9-3c-kzf"/>
                             <constraint firstAttribute="bottom" secondItem="peV-vl-bJo" secondAttribute="bottom" id="6Dc-jf-XGV"/>
                             <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="ffE-6v-oc7" secondAttribute="trailing" constant="25" id="MGC-7u-CVh"/>
                             <constraint firstItem="Td2-f5-mXa" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="Qxt-hm-baq"/>
                             <constraint firstItem="NSs-H2-SzW" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="VkE-Jh-keG"/>
-                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="ffE-6v-oc7" secondAttribute="bottom" constant="25" id="eCO-WQ-tWl"/>
+                            <constraint firstItem="SDt-Er-efx" firstAttribute="bottom" secondItem="ffE-6v-oc7" secondAttribute="bottom" constant="50" id="eCO-WQ-tWl"/>
                             <constraint firstItem="ffE-6v-oc7" firstAttribute="leading" secondItem="SDt-Er-efx" secondAttribute="leading" constant="25" id="fa0-a6-kZS"/>
                             <constraint firstItem="SDt-Er-efx" firstAttribute="trailing" secondItem="NSs-H2-SzW" secondAttribute="trailing" constant="25" id="hON-Bf-5h9"/>
                             <constraint firstItem="peV-vl-bJo" firstAttribute="top" secondItem="UFu-Oz-pcX" secondAttribute="top" id="otI-eD-rsZ"/>

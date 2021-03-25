@@ -6,21 +6,21 @@ class ViewController: UIViewController
     let urlFreeGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/games/10/explicit.json"
     let urlNewGames = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/10/explicit.json"
     
-//    var networkServise = NetworkService()
     var networkDataFetcher = NetworkDataFetcher()
     let dataStore = DataStore()
     
-    //Элементы пользовательского элемента
-    @IBOutlet weak var enterYourNameLabel: UILabel!
     @IBOutlet weak var textFieldToEnterName: UITextField!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var viewForDesign: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
     //MARK: - View lifecycle
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        displayingButton(bool: false)
+        
         networkDataFetcher.fetchFreeGames(urlString: urlFreeGames) { (freeGames) in
             print(freeGames?.feed.results.first?.name)
         }
@@ -37,36 +37,72 @@ class ViewController: UIViewController
     }
     
     //MARK: - Business Logic
-    func changeName()
+    
+    func changeEmail()
     {
-        guard let textName = textFieldToEnterName.text, textName != "" else {
-            showAlert()
-            return
-        }
-        dataStore.fakeSaveNameInCache(name: textName)
+        guard let textEmail = textFieldToEnterName.text else { return }
+        displayingButton(bool: isValidEmail(textEmail))
     }
     
     //MARK: - User interface
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField)
     {
+        changeEmail()
         displayNameLabel.text = textFieldToEnterName.text
+        easterEgg()
     }
     
     @IBAction func fakeSaveAction(_ sender: Any)
     {
-        changeName()
+        //Мы сюда не попадем при пустом textFieldToEnterName.text
+        dataStore.fakeSaveNameInCache(email: textFieldToEnterName.text!)
+        showAlert()
         textFieldToEnterName.text = ""
+        displayingButton(bool: false)
     }
     
-    func showAlert()
+    private func showAlert()
     {
-        let alert = UIAlertController(title: "Нечего сохранять", message: "Попробуй указать имя", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Фейковый вход произведен", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true)
     }
     
-    func designButton()
+    //MARK: - Business Logic Button Сustomization
+    
+    private func easterEgg()
+    {
+        guard let easterText = textFieldToEnterName.text else { return }
+        switch easterText {
+            case "S":
+                displayNameLabel.text = "Single Responsibly Principle\nПринцип единственной ответственности"
+            case "O":
+                displayNameLabel.text = "Open Closed Principle\nПринцип открытости/закрытости"
+            case "L":
+                displayNameLabel.text = "Liskov Substitution Principle\nПринцип подстановки Барбары Лисков"
+            case "I":
+                displayNameLabel.text = "Interface Segregation Principle\nПринцип разделения интерфейса"
+            case "D":
+                displayNameLabel.text = "Dependency Inversion Principle\nПринцип инверсии зависимостей"
+            default:
+                return
+        }
+    }
+    
+    private func displayingButton(bool: Bool)
+    {
+        saveButton.alpha = bool ? 1 : 0.3
+        saveButton.isEnabled = bool
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailPred.evaluate(with: email)
+    }
+    
+    private func designButton()
     {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.white.cgColor, UIColor.white.cgColor]
@@ -79,4 +115,5 @@ class ViewController: UIViewController
         saveButton.layer.borderWidth = 2.0
     }
 }
+
 
