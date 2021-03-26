@@ -19,4 +19,4 @@
 Не придумывай к задаче более сложного решения, чем ей требуется.
 Самое разумное решение оказывается и самым простым. Написание производительного, эффективного и простого кода – это прекрасно.
 
-<a href="https://ibb.co/H2w9J26"><img src="https://i.ibb.co/kybPdyj/SOLID.png" alt="SOLID" border="0"></a>
+<a href="https://ibb.co/H2w9J26"><img src="https://i.ibb.co/kybPdyj/SOLID.png" alt="SOLID" border="0"></a><a href="https://ibb.co/MZzhHGK"><img src="https://i.ibb.co/34xsbMV/SOLID.png" alt="SOLID" border="0"></a>
