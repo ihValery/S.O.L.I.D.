@@ -1,10 +1,10 @@
 # S.O.L.I.D. На шаг ближе к чистой архитектуре
 
-S: Single Responsibility Principle (Принцип единственной ответственности).
-O: Open-Closed Principle (Принцип открытости-закрытости).
-L: Liskov Substitution Principle (Принцип подстановки Барбары Лисков).
-I: Interface Segregation Principle (Принцип разделения интерфейса).
-D: Dependency Inversion Principle (Принцип инверсии зависимостей).
+-S- Single Responsibility Principle (Принцип единственной ответственности).
+-O- Open-Closed Principle (Принцип открытости-закрытости).
+-L- Liskov Substitution Principle (Принцип подстановки Барбары Лисков).
+-I- Interface Segregation Principle (Принцип разделения интерфейса).
+-D- Dependency Inversion Principle (Принцип инверсии зависимостей).
 
 - Изучаем теоретическую составляющую каждого принципа SOLID
 - Разбираемся с применением каждого принципа на практических примерах
