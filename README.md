@@ -6,6 +6,8 @@
 - I: Interface Segregation Principle (Принцип разделения интерфейса).
 - D: Dependency Inversion Principle (Принцип инверсии зависимостей).
 
+<a href="https://ibb.co/H2w9J26"><img src="https://i.ibb.co/TTjNCT6/SOLID.png" alt="SOLID" border="0"></a>
+
 - 1. Изучаем теоретическую составляющую каждого принципа SOLID
 - 2. Разбираемся с применением каждого принципа на практических примерах
 - 3. Смотрим как применяются SOLID принципы в рамках реального приложения
